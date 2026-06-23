@@ -10,12 +10,16 @@ load_dotenv()
 
 
 # Supabase connection string format:
-# postgresql://postgres:[YOUR-PASSWORD]@[PROJECT-REF].supabase.co:5432/postgres
-#
+# Go to Connect -> Direct Connection String -> Direct Connect (IPv6) OR Session Pooler (IPv4)
+'''
 # Recommended .env:
-# SUPABASE_DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@[PROJECT-REF].supabase.co:5432/postgres
-# OPENAI_API_KEY=your_openai_api_key
 
+SUPABASE_DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@[PROJECT-REF].supabase.co:5432/postgres
+
+SUPABASE_DATABASE_URL=postgresql://postgres.[PROJECT-REF]:[YOUR-PASSWORD]@[SESSION-POOLER].pooler.supabase.com:5432/postgres
+
+OPENAI_API_KEY=your_openai_api_key
+'''
 SUPABASE_URL = os.getenv("SUPABASE_DATABASE_URL")
 
 DATABASE_URL = SUPABASE_URL or os.getenv(
