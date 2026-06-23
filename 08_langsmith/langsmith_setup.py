@@ -13,9 +13,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Enable tracing
-os.environ["LANGSMITH_TRACING"] = "true"
-
 
 @traceable(name="basic_chaining")
 def demo_basic_tracing():
